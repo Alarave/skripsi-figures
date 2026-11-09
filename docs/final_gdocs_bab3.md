@@ -175,7 +175,7 @@ Sebanyak 5.358 foto kemasan diberi label kotak pembatas berupa koordinat posisi 
 
 **Gambar 3.5 Anotasi Kotak Pembatas Atribut**
 
-Pada Gambar 3.5 diperlihatkan contoh foto kemasan produk pada bagian A dan hasil penandaan kotak pembatas pada bagian B, di mana warna merah menandai posisi merek, warna hijau menandai isi bersih, dan warna biru menandai tipe sediaan produk.
+Pada Gambar 3.5 diperlihatkan contoh foto kemasan produk pada bagian A dan hasil penandaan kotak pembatas pada bagian B, dengan warna merah menandai posisi merek, warna hijau menandai isi bersih, dan warna biru menandai tipe sediaan produk.
 
 3. Pembagian Partisi Dataset
 
@@ -289,21 +289,21 @@ Pengukuran kemampuan model dalam menentukan status kesesuaian katalog dihitung m
 
 
 
-![Persamaan 3.3]()
+![Persamaan 3.3](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_3.png)
 
 
 
 
 
-![Persamaan 3.4]()
+![Persamaan 3.4](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_4.png)
 
 
 
 Keterangan:
-- $TP$ (True Positive): Jumlah produk berstatus sesuai yang diprediksi benar oleh model.
-- $TN$ (True Negative): Jumlah produk berstatus tidak sesuai yang diprediksi benar oleh model.
-- $FP$ (False Positive): Jumlah produk yang sebenarnya tidak sesuai tetapi diprediksi sesuai.
-- $FN$ (False Negative): Jumlah produk yang sebenarnya sesuai tetapi diprediksi tidak sesuai.
+- TP (True Positive): Jumlah produk berstatus sesuai yang diprediksi benar oleh model.
+- TN (True Negative): Jumlah produk berstatus tidak sesuai yang diprediksi benar oleh model.
+- FP (False Positive): Jumlah produk yang sebenarnya tidak sesuai tetapi diprediksi sesuai.
+- FN (False Negative): Jumlah produk yang sebenarnya sesuai tetapi diprediksi tidak sesuai.
 
 2. Metrik Pembacaan Teks Karakter
 
@@ -311,31 +311,31 @@ Tingkat kesalahan pembacaan teks pada kemasan diukur menggunakan Character Error
 
 
 
-![Persamaan 3.5]()
+![Persamaan 3.5](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_5.png)
 
 
 
 
 
-![Persamaan 3.6]()
+![Persamaan 3.6](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_6.png)
 
 
 
 Keterangan:
-- $S_c$ dan $S_w$: Jumlah karakter atau kata yang tertukar (substitusi).
-- $D_c$ dan $D_w$: Jumlah karakter atau kata yang terhapus atau tidak terbaca (penghapusan).
-- $I_c$ dan $I_w$: Jumlah karakter atau kata tambahan yang salah terbaca (penyisipan).
+- S_c dan S_w: Jumlah karakter atau kata yang tertukar (substitusi).
+- D_c dan D_w: Jumlah karakter atau kata yang terhapus atau tidak terbaca (penghapusan).
+- I_c dan I_w: Jumlah karakter atau kata tambahan yang salah terbaca (penyisipan).
 - N_c dan N_w: Jumlah total karakter atau kata pada teks acuan kemasan fisik.
 
 Tingkat kesamaan teks merek dan tipe sediaan dihitung menggunakan rumus Normalized Levenshtein Similarity atau NLS:
 
 
 
-![Persamaan 3.7]()
+![Persamaan 3.7](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_7.png)
 
 
 
-di mana $\text{Lev}(s_1, s_2)$ menyatakan jarak edit minimum antara teks katalog s₁ dan teks hasil baca kemasan s₂.
+dengan Lev(s_1, s_2) menyatakan jarak edit minimum antara teks katalog s₁ dan teks hasil baca kemasan s₂.
 
 3. Pengukuran Efisiensi Sumber Daya
 
@@ -351,25 +351,25 @@ Untuk membuktikan apakah perbedaan ketepatan klasifikasi antara model hibrida da
 
 | Performa Model Hibrida | Model Qwen2-VL Benar | Model Qwen2-VL Salah | Total |
 | :--- | :---: | :---: | :---: |
-| **Model Hibrida Benar** | $a$ | b | $a + b$ |
-| **Model Hibrida Salah** | c | $d$ | $c + d$ |
-| **Total** | $a + c$ | $b + d$ | $N = 804$ |
+| **Model Hibrida Benar** | a | b | a + b |
+| **Model Hibrida Salah** | c | d | c + d |
+| **Total** | a + c | b + d | N = 804 |
 
 Keterangan:
-- $a$: Jumlah sampel yang dijawab benar oleh kedua model.
+- a: Jumlah sampel yang dijawab benar oleh kedua model.
 - b: Jumlah sampel yang dijawab benar oleh model hibrida tetapi dijawab salah oleh model Qwen2-VL.
 - c: Jumlah sampel yang dijawab salah oleh model hibrida tetapi dijawab benar oleh model Qwen2-VL.
-- $d$: Jumlah sampel yang dijawab salah oleh kedua model.
+- d: Jumlah sampel yang dijawab salah oleh kedua model.
 
 Nilai statistik uji chi-kuadrat dihitung menggunakan koreksi kontinuitas Edwards pada taraf signifikansi α = 0,05:
 
 
 
-![Persamaan 3.8]()
+![Persamaan 3.8](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_8.png)
 
 
 
-Jika nilai $\chi^2$ hitung lebih besar dari nilai kritis tabel chi-kuadrat dengan derajat bebas 1 (χ²(0,05; 1) = 3,841) atau nilai $p < 0,05$, maka terdapat perbedaan performa yang signifikan antara kedua model.
+Jika nilai chi^2 hitung lebih besar dari nilai kritis tabel chi-kuadrat dengan derajat bebas 1 (χ²(0,05; 1) = 3,841) atau nilai p < 0,05, maka terdapat perbedaan performa yang signifikan antara kedua model.
 
 ### 3.6.6 *Deployment*
 
@@ -449,7 +449,7 @@ Setelah status verifikasi ditetapkan pada tahap *Deployment*, sistem menyusun re
 
 
 
-![Persamaan 3.9]()
+![Persamaan 3.9](https://raw.githubusercontent.com/Alarave/skripsi-figures/main/formulas/eq_3_9.png)
 
 
 
